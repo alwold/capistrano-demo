@@ -1,0 +1,16 @@
+---
+- hosts: all
+  sudo: true
+  tasks:
+    - name: install nginx
+      apt: pkg=nginx state=latest
+    - name: install phusion passenger repo key
+      apt_key: url=http://keyserver.ubuntu.com/pks/lookup?op=get&fingerprint=on&search=0x561F9B9CAC40B2F7 state=present
+    - name: install phusion passenger repo
+      apt_repository: repo="deb https://oss-binaries.phusionpassenger.com/apt/passenger saucy main" state=present
+    - name: update
+      apt: update_cache=yes
+    - name: install passenger
+      apt: pkg=passenger state=latest
+    - name: install nginx extras
+      apt: pkg=nginx-extras state=latest
