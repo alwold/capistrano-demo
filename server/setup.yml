@@ -7,7 +7,7 @@
     - name: install phusion passenger repo key
       apt_key: url=http://keyserver.ubuntu.com/pks/lookup?op=get&fingerprint=on&search=0x561F9B9CAC40B2F7 state=present
     - name: install phusion passenger repo
-      apt_repository: repo="deb https://oss-binaries.phusionpassenger.com/apt/passenger saucy main" state=present
+      apt_repository: repo="deb https://oss-binaries.phusionpassenger.com/apt/passenger trusty main" state=present
     - name: update
       apt: update_cache=yes
     - name: install passenger
