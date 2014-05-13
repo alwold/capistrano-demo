@@ -14,3 +14,11 @@
       apt: pkg=passenger state=latest
     - name: install nginx extras
       apt: pkg=nginx-extras state=latest
+    - name: install git
+      apt: pkg=git state=latest
+    - name: install ruby-dev
+      apt: pkg=ruby1.9.1-dev state=latest
+    - name: install sqlite3-dev
+      apt: pkg=libsqlite3-dev state=latest
+    - name: install g++
+      apt: pkg=g++ state=latest
